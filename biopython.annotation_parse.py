@@ -110,7 +110,7 @@ def to_fasta(genes,plik,desc="",outfile=""): #requires properly formated annotat
 										record = SeqRecord(Seq(seqs[set_pos[index]]), id=gene_id, description=desc, annotations={"loc":set_pos[index], "source":genes[set_pos[index]]})#, all_similar=genes[set_pos[index]])
 										records.append(record)
 										if outfile:
-											outfile.write('>'+str(log+1)+"_"+all[set_pos[index]][0]+"_"+str(len(seqs[set_pos[index]]))+'\t'+str(set_pos[index])+'\n')
+											outfile.write('>'+str(log+1)+"_"+genes[set_pos[index]][0]+"_"+str(len(seqs[set_pos[index]]))+'\t'+str(set_pos[index])+'\n')
 											seq_write(outfile,seqs[set_pos[index]])
 										seqs[set_pos[index]]=''
 										log+=1
@@ -130,5 +130,5 @@ def workflow(genome, ncbi, pro, gli, mga, mgm, desc="", output=""): #suggested w
 		if gli: in_gli(gli,genes)
 		if mga: in_mga(mga,genes)
 		if mgm: in_mgm(mgm,genes)
-		records=to_fasta(all,open(genome),desc,output)
+		records=to_fasta(genes,open(genome),desc,output)
 		return records
