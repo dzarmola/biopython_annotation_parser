@@ -13,6 +13,10 @@ Use examples:
 2. 
   records=workflow("../ecoli/sequence.fasta",["ncbi/NC_000913.gff"],[],[],[],[],"ecoli as annotated in ncbi")
 
+Files used above can be downloaded from NCBI:
+ftp://ftp.ncbi.nlm.nih.gov/genomes/Bacteria/Escherichia_coli_K_12_substr__MG1655_uid57779/NC_000913.gff
+http://www.ncbi.nlm.nih.gov/sviewer/viewer.cgi?tool=portal&sendto=on&log$=seqview&db=nuccore&dopt=fasta&sort=&val=545778205&extrafeat=976&fmt_mask=294912&maxplex=1
+
 Included functions:
 
 read_file(plik,name,n,x,y,z,genes={}):
