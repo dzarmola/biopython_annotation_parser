@@ -5,6 +5,14 @@ Creates SeqRecord objects from automatic annotation files
 
 Obviously both Seq and SeqRecord modules from BioPython are required.
 
+Use examples:
+1.
+  genes={}
+  genes=in_ncbi("ncbi/NC_000913.gff",genes)
+  records=to_fasta(genes,open("../ecoli/sequence.fasta"),"ecoli as annotated in ncbi")
+2. 
+  records=workflow("../ecoli/sequence.fasta",["ncbi/NC_000913.gff"],[],[],[],[],"ecoli as annotated in ncbi")
+
 Included functions:
 
 read_file(plik,name,n,x,y,z,genes={}):
